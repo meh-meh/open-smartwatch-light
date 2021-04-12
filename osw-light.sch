@@ -5,8 +5,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "Open-Smartwatch-Light"
-Date "2021-02-18"
-Rev "3.3"
+Date "2021-04-10"
+Rev "3.4"
 Comp ""
 Comment1 ""
 Comment2 ""
@@ -159,49 +159,6 @@ F 3 "" H 1750 7250 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	1750 7250 1750 7200
-$Comp
-L Timer_RTC:DS3231MZ U1
-U 1 1 5F6A53FE
-P 1200 1450
-F 0 "U1" H 850 1800 50  0000 C CNN
-F 1 "DS3231MZ" H 1450 1100 50  0000 C CNN
-F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 1200 950 50  0001 C CNN
-F 3 "http://datasheets.maximintegrated.com/en/ds/DS3231M.pdf" H 1200 850 50  0001 C CNN
-	1    1200 1450
-	1    0    0    -1  
-$EndComp
-Text Label 550  1250 0    50   ~ 0
-SCL
-Wire Wire Line
-	550  1250 700  1250
-Text Label 550  1350 0    50   ~ 0
-SDA
-Wire Wire Line
-	550  1350 700  1350
-$Comp
-L power:+3V3 #PWR03
-U 1 1 5F6ADFAF
-P 1200 800
-F 0 "#PWR03" H 1200 650 50  0001 C CNN
-F 1 "+3V3" H 1215 973 50  0000 C CNN
-F 2 "" H 1200 800 50  0001 C CNN
-F 3 "" H 1200 800 50  0001 C CNN
-	1    1200 800 
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR09
-U 1 1 5F6BC9F6
-P 1200 2200
-F 0 "#PWR09" H 1200 1950 50  0001 C CNN
-F 1 "GND" H 1205 2027 50  0000 C CNN
-F 2 "" H 1200 2200 50  0001 C CNN
-F 3 "" H 1200 2200 50  0001 C CNN
-	1    1200 2200
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	1200 2200 1200 2100
 Text Label 10150 2700 0    50   ~ 0
 VBUS
 Wire Wire Line
@@ -278,8 +235,6 @@ NoConn ~ 10350 3000
 NoConn ~ 8550 3900
 Wire Wire Line
 	10350 2800 10150 2800
-NoConn ~ 700  1650
-NoConn ~ 1700 1250
 $Comp
 L Connector_Generic:Conn_01x02 J1
 U 1 1 5FA4BA83
@@ -338,7 +293,7 @@ Connection ~ 8950 2800
 Wire Wire Line
 	8950 2800 8950 2900
 Wire Notes Line
-	500  2450 500  500 
+	3600 5500 3600 500 
 Wire Notes Line
 	11100 2500 11100 4450
 Wire Notes Line
@@ -709,7 +664,7 @@ F 3 "~" H 7125 4825 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	3550 6300 4100 6300
-Text Notes 550  600  0    50   Italic 10
+Text Notes 3650 600  0    50   Italic 10
 SENSORS
 Text Notes 550  5650 0    50   Italic 10
 POWER
@@ -822,46 +777,6 @@ Wire Notes Line
 	11100 6450 11100 4525
 Text Notes 5750 3575 0    50   Italic 10
 BUTTONS
-Text Label 3525 1550 2    50   ~ 0
-IO35
-Text Label 3525 1350 2    50   ~ 0
-IO34
-Wire Wire Line
-	3325 1550 3525 1550
-Wire Wire Line
-	3325 1350 3525 1350
-Text Label 2175 1350 0    50   ~ 0
-SCL
-$Comp
-L power:+3V3 #PWR05
-U 1 1 5F6D0321
-P 2925 800
-F 0 "#PWR05" H 2925 650 50  0001 C CNN
-F 1 "+3V3" H 2940 973 50  0000 C CNN
-F 2 "" H 2925 800 50  0001 C CNN
-F 3 "" H 2925 800 50  0001 C CNN
-	1    2925 800 
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2925 800  2925 850 
-Wire Wire Line
-	2175 1350 2325 1350
-Wire Wire Line
-	2175 1200 2325 1200
-Text Label 2175 1200 0    50   ~ 0
-SDA
-$Comp
-L power:GND #PWR011
-U 1 1 5F6D792A
-P 2725 2200
-F 0 "#PWR011" H 2725 1950 50  0001 C CNN
-F 1 "GND" H 2730 2027 50  0000 C CNN
-F 2 "" H 2725 2200 50  0001 C CNN
-F 3 "" H 2725 2200 50  0001 C CNN
-	1    2725 2200
-	1    0    0    -1  
-$EndComp
 $Comp
 L Device:R_Small R6
 U 1 1 60BDE5E3
@@ -968,69 +883,10 @@ Wire Wire Line
 	7100 1600 6850 1600
 Wire Wire Line
 	7100 1750 6850 1750
-$Comp
-L Device:R_Small R16
-U 1 1 5F7492F9
-P 5350 1250
-F 0 "R16" V 5275 1175 50  0000 L CNN
-F 1 "200k" V 5425 1175 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 5350 1250 50  0001 C CNN
-F 3 "~" H 5350 1250 50  0001 C CNN
-	1    5350 1250
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R_Small R17
-U 1 1 5F749989
-P 5350 1650
-F 0 "R17" V 5275 1575 50  0000 L CNN
-F 1 "10k" V 5425 1550 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 5350 1650 50  0001 C CNN
-F 3 "~" H 5350 1650 50  0001 C CNN
-	1    5350 1650
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	5350 1350 5350 1450
-$Comp
-L power:GND #PWR053
-U 1 1 5F75A57D
-P 5350 2200
-F 0 "#PWR053" H 5350 1950 50  0001 C CNN
-F 1 "GND" H 5355 2027 50  0000 C CNN
-F 2 "" H 5350 2200 50  0001 C CNN
-F 3 "" H 5350 2200 50  0001 C CNN
-	1    5350 2200
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	5350 1750 5350 2200
-Text Label 5350 1000 2    50   ~ 0
-VBAT
-Wire Wire Line
-	5350 1150 5350 1000
 Wire Notes Line
-	500  500  5600 500 
-Wire Wire Line
-	5350 1450 4950 1450
-Connection ~ 5350 1450
-Wire Wire Line
-	5350 1450 5350 1550
-Text Label 4950 1450 0    50   ~ 0
-B_MON
-Wire Wire Line
-	2725 900  2725 850 
-Wire Wire Line
-	2725 850  2925 850 
-Connection ~ 2925 850 
-Wire Wire Line
-	2925 850  2925 900 
+	3600 500  5600 500 
 Wire Wire Line
 	4100 6300 4200 6300
-Text Notes 5025 700  0    50   ~ 0
-VBAT:\n3.7-4.2V
-Text Notes 5025 850  0    50   ~ 0
-VBAT =\n5.55 * B_MON\n
 Text Label 6850 1600 0    50   ~ 0
 TFT_CS
 Wire Wire Line
@@ -1043,10 +899,6 @@ Text Label 6900 1150 0    50   ~ 0
 MOSI
 Text Label 6850 1750 0    50   ~ 0
 TFT_DC
-Text Label 1800 1900 1    50   ~ 0
-RTC_INT
-Wire Wire Line
-	1700 1550 1800 1550
 Text Label 3375 5825 2    50   ~ 0
 VCC
 Connection ~ 2650 6300
@@ -1054,151 +906,12 @@ Wire Wire Line
 	2650 6300 2750 6300
 Wire Wire Line
 	2650 5825 3375 5825
-Wire Wire Line
-	3850 5350 4250 5350
-Wire Wire Line
-	4050 5150 3850 5150
-Text Label 3850 5150 0    50   ~ 0
-BTN3
-Wire Wire Line
-	4050 5050 4050 5150
-Wire Wire Line
-	4250 5050 4250 5350
-Text Label 3850 5350 0    50   ~ 0
-BTN2
-Wire Wire Line
-	3750 4400 3400 4400
-Text Label 3400 3900 0    50   ~ 0
-TFT_RST
-Wire Wire Line
-	3750 3900 3400 3900
-Wire Wire Line
-	3750 3800 3400 3800
-Text Label 3400 4400 0    50   ~ 0
-TFT_DC
 Wire Notes Line
-	500  2450 5600 2450
-$Comp
-L power:+3V3 #PWR017
-U 1 1 5FCF97D6
-P 3600 2850
-F 0 "#PWR017" H 3600 2700 50  0001 C CNN
-F 1 "+3V3" H 3615 3023 50  0000 C CNN
-F 2 "" H 3600 2850 50  0001 C CNN
-F 3 "" H 3600 2850 50  0001 C CNN
-	1    3600 2850
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3600 3200 3600 2925
-Text Label 3850 5250 0    50   ~ 0
-PIN_LED
-Wire Wire Line
-	4750 5150 5150 5150
-Wire Wire Line
-	4750 5050 4750 5150
+	3600 5500 5600 5500
 Wire Notes Line
 	5650 500  5650 2450
 Wire Notes Line
 	5650 2450 8550 2450
-Text Notes 3150 2600 0    50   Italic 10
-MICROCONTROLLER
-Wire Notes Line
-	3100 2500 5600 2500
-Wire Notes Line
-	3100 5500 3100 2500
-Wire Notes Line
-	5600 5500 3100 5500
-Wire Notes Line
-	5600 2500 5600 5500
-Wire Notes Line
-	5600 500  5600 2450
-Text Label 5150 5150 2    50   ~ 0
-STAT_PWR
-Wire Wire Line
-	5450 3100 5450 3175
-Wire Wire Line
-	5050 3100 5450 3100
-$Comp
-L power:GND #PWR020
-U 1 1 5FD3B956
-P 5450 3175
-F 0 "#PWR020" H 5450 2925 50  0001 C CNN
-F 1 "GND" H 5455 3002 50  0000 C CNN
-F 2 "" H 5450 3175 50  0001 C CNN
-F 3 "" H 5450 3175 50  0001 C CNN
-	1    5450 3175
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3475 4500 3475 5100
-Wire Wire Line
-	3750 4500 3475 4500
-$Comp
-L power:GND #PWR026
-U 1 1 5FD2DDCD
-P 3475 5100
-F 0 "#PWR026" H 3475 4850 50  0001 C CNN
-F 1 "GND" H 3480 4927 50  0000 C CNN
-F 2 "" H 3475 5100 50  0001 C CNN
-F 3 "" H 3475 5100 50  0001 C CNN
-	1    3475 5100
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3750 3200 3600 3200
-NoConn ~ 4350 5050
-NoConn ~ 4450 5050
-NoConn ~ 4550 5050
-NoConn ~ 4650 5050
-Text Label 5300 3200 2    50   ~ 0
-MOSI
-Wire Wire Line
-	5050 3200 5300 3200
-Text Label 3400 3800 0    50   ~ 0
-RTC_INT
-Text Label 3550 3700 0    50   ~ 0
-IO35
-Text Label 3550 3600 0    50   ~ 0
-IO34
-Wire Wire Line
-	3750 3700 3550 3700
-Wire Wire Line
-	3750 3600 3550 3600
-Text Label 5300 3500 2    50   ~ 0
-RX
-Text Label 5300 3400 2    50   ~ 0
-TX
-Text Label 5400 4000 2    50   ~ 0
-TFT_CS
-Text Label 5400 3900 2    50   ~ 0
-SCK
-NoConn ~ 5050 4200
-NoConn ~ 5050 4100
-Wire Wire Line
-	5050 4000 5400 4000
-Wire Wire Line
-	5050 3900 5400 3900
-Wire Wire Line
-	5050 3500 5300 3500
-Wire Wire Line
-	5050 3400 5300 3400
-Text Label 5300 3600 2    50   ~ 0
-SDA
-Wire Wire Line
-	5050 3600 5300 3600
-Text Label 5300 3300 2    50   ~ 0
-SCL
-Wire Wire Line
-	5050 3300 5300 3300
-Text Label 3600 3300 0    50   ~ 0
-EN
-Wire Wire Line
-	3750 3300 3600 3300
-Text Label 5375 4400 2    50   ~ 0
-FLASH
-Wire Wire Line
-	5050 4400 5375 4400
 $Comp
 L Device:C_Small C9
 U 1 1 5F753E14
@@ -1208,39 +921,6 @@ F 1 "0.1u" H 9640 2930 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric" H 9600 3000 50  0001 C CNN
 F 3 "~" H 9600 3000 50  0001 C CNN
 	1    9600 3000
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C_Small C11
-U 1 1 5F8276CE
-P 1950 1000
-F 0 "C11" H 2020 1070 50  0000 L CNN
-F 1 "0.1u" H 1990 930 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 1950 1000 50  0001 C CNN
-F 3 "~" H 1950 1000 50  0001 C CNN
-	1    1950 1000
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C_Small C13
-U 1 1 5F8293A4
-P 3600 1000
-F 0 "C13" H 3670 1070 50  0000 L CNN
-F 1 "0.1u" H 3640 930 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 3600 1000 50  0001 C CNN
-F 3 "~" H 3600 1000 50  0001 C CNN
-	1    3600 1000
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C_Small C8
-U 1 1 5F82A290
-P 3250 3150
-F 0 "C8" H 3320 3220 50  0000 L CNN
-F 1 "0.1u" H 3290 3080 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 3250 3150 50  0001 C CNN
-F 3 "~" H 3250 3150 50  0001 C CNN
-	1    3250 3150
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1268,34 +948,6 @@ Wire Notes Line
 	5650 2500 5650 3400
 Text Notes 5725 2600 0    50   Italic 10
 POWER FLAGS
-Wire Wire Line
-	1800 1400 1800 1550
-Connection ~ 1800 1550
-Wire Wire Line
-	1800 1550 1800 1900
-$Comp
-L Device:R_Small R18
-U 1 1 5FCDFF42
-P 1800 1300
-F 0 "R18" H 1650 1350 50  0000 L CNN
-F 1 "2.2K" H 1575 1275 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 1800 1300 50  0001 C CNN
-F 3 "~" H 1800 1300 50  0001 C CNN
-	1    1800 1300
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	3375 850  3375 1200
-Wire Wire Line
-	3375 1200 3325 1200
-Text Notes 1350 2075 0    50   ~ 0
-I2C addr\n0x68
-Text Notes 3000 2100 0    50   ~ 0
-I2C addr\n0x14
-Wire Wire Line
-	4150 5250 4150 5050
-Wire Wire Line
-	3850 5250 4150 5250
 Text Label 2500 6450 0    50   ~ 0
 VBAT
 Wire Wire Line
@@ -1336,63 +988,6 @@ Wire Wire Line
 Connection ~ 8950 4150
 Wire Wire Line
 	8950 4150 8950 4100
-Wire Wire Line
-	1200 800  1200 850 
-Wire Wire Line
-	1950 850  1950 900 
-Wire Wire Line
-	1200 850  1800 850 
-Connection ~ 1200 850 
-Wire Wire Line
-	1200 850  1200 1050
-Wire Wire Line
-	1200 850  1100 850 
-Wire Wire Line
-	1100 850  1100 1050
-Wire Wire Line
-	1800 850  1800 1200
-Connection ~ 1800 850 
-Wire Wire Line
-	1800 850  1950 850 
-Wire Wire Line
-	1950 1100 1950 2100
-Wire Wire Line
-	1950 2100 1200 2100
-Connection ~ 1200 2100
-Wire Wire Line
-	1200 2100 1200 1850
-Wire Wire Line
-	3600 850  3600 900 
-Wire Wire Line
-	2925 850  3375 850 
-Connection ~ 3375 850 
-Wire Wire Line
-	3375 850  3600 850 
-Wire Wire Line
-	3600 2100 3600 1100
-Wire Wire Line
-	2925 2100 3600 2100
-Connection ~ 2925 2100
-Wire Wire Line
-	2925 2100 2725 2100
-Connection ~ 2725 2100
-Wire Wire Line
-	2725 2100 2725 2200
-Wire Wire Line
-	3600 2925 3250 2925
-Wire Wire Line
-	3250 2925 3250 3050
-Connection ~ 3600 2925
-Wire Wire Line
-	3600 2925 3600 2850
-Wire Wire Line
-	3250 3350 3250 3250
-Wire Wire Line
-	3250 3350 3250 4500
-Wire Wire Line
-	3250 4500 3475 4500
-Connection ~ 3250 3350
-Connection ~ 3475 4500
 Wire Notes Line
 	5650 3450 8150 3450
 Wire Notes Line
@@ -1411,7 +1006,6 @@ Wire Notes Line
 	6925 6450 11100 6450
 Wire Notes Line
 	8200 4525 11100 4525
-NoConn ~ 3750 3500
 $Comp
 L Device:R_Small R21
 U 1 1 5FAF8B20
@@ -1460,8 +1054,6 @@ Wire Wire Line
 	8375 3200 8550 3200
 Wire Wire Line
 	9950 3100 10350 3100
-Text Notes 3325 4100 0    50   ~ 0
-GPS_FON
 Wire Wire Line
 	2650 6300 2650 6150
 Wire Wire Line
@@ -1769,7 +1361,6 @@ F 3 "" H 5375 6025 50  0001 C CNN
 $EndComp
 Text Label 6700 6700 2    50   ~ 0
 3V3_2
-NoConn ~ 3750 4100
 Wire Wire Line
 	6175 2850 6175 3100
 $Comp
@@ -1817,57 +1408,542 @@ Wire Wire Line
 Wire Wire Line
 	6675 2100 7450 2100
 Connection ~ 7450 2100
-NoConn ~ 5050 3800
-NoConn ~ 5050 4300
-NoConn ~ 3750 4300
+Wire Wire Line
+	5125 6800 5125 7100
+Text Notes 550  600  0    50   Italic 10
+MICROCONTROLLER
+Wire Notes Line
+	500  500  3550 500 
+Wire Notes Line
+	3550 5500 500  5500
+Wire Notes Line
+	3550 500  3550 5500
+Wire Notes Line
+	500  5500 500  500 
 $Comp
-L open-Smartwatch:ttgo-32-micro U7
-U 1 1 5F52BDFD
-P 4400 3800
-F 0 "U7" H 4000 4650 50  0000 C CNN
-F 1 "ttgo-32-micro" H 4550 4650 50  0000 C CNN
-F 2 "open-Smartwatch:ttgo-32-micro" H 4000 4400 50  0001 C CNN
-F 3 "" H 4000 4400 50  0001 C CNN
-	1    4400 3800
+L Device:R_Small R16
+U 1 1 5F7492F9
+P 4675 950
+F 0 "R16" V 4600 875 50  0000 L CNN
+F 1 "200k" V 4750 875 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 4675 950 50  0001 C CNN
+F 3 "~" H 4675 950 50  0001 C CNN
+	1    4675 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small R17
+U 1 1 5F749989
+P 4675 1350
+F 0 "R17" V 4600 1275 50  0000 L CNN
+F 1 "10k" V 4750 1250 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 4675 1350 50  0001 C CNN
+F 3 "~" H 4675 1350 50  0001 C CNN
+	1    4675 1350
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5125 6800 5125 7100
-NoConn ~ 3750 4200
-NoConn ~ 5050 4500
+	4675 1050 4675 1150
+$Comp
+L power:GND #PWR053
+U 1 1 5F75A57D
+P 4675 1675
+F 0 "#PWR053" H 4675 1425 50  0001 C CNN
+F 1 "GND" H 4680 1502 50  0000 C CNN
+F 2 "" H 4675 1675 50  0001 C CNN
+F 3 "" H 4675 1675 50  0001 C CNN
+	1    4675 1675
+	1    0    0    -1  
+$EndComp
 Wire Wire Line
-	2725 1950 2725 2100
+	4675 1450 4675 1675
+Text Label 4675 700  2    50   ~ 0
+VBAT
 Wire Wire Line
-	2925 1950 2925 2100
+	4675 850  4675 700 
+Wire Wire Line
+	4675 1150 4275 1150
+Connection ~ 4675 1150
+Wire Wire Line
+	4675 1150 4675 1250
+Text Label 4275 1150 0    50   ~ 0
+B_MON
+Text Notes 4875 1125 0    50   ~ 0
+VBAT:\n3.7-4.2V
+Text Notes 4875 1275 0    50   ~ 0
+VBAT =\n5.55 * B_MON\n
+Text Label 5175 4500 2    50   ~ 0
+IO35
+Text Label 5175 4300 2    50   ~ 0
+IO34
+Wire Wire Line
+	4975 4500 5175 4500
+Wire Wire Line
+	4975 4300 5175 4300
+Text Label 3825 4300 0    50   ~ 0
+SCL
+$Comp
+L power:+3V3 #PWR05
+U 1 1 5F6D0321
+P 4575 3750
+F 0 "#PWR05" H 4575 3600 50  0001 C CNN
+F 1 "+3V3" H 4590 3923 50  0000 C CNN
+F 2 "" H 4575 3750 50  0001 C CNN
+F 3 "" H 4575 3750 50  0001 C CNN
+	1    4575 3750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4575 3750 4575 3800
+Wire Wire Line
+	3825 4300 3975 4300
+Wire Wire Line
+	3825 4150 3975 4150
+Text Label 3825 4150 0    50   ~ 0
+SDA
+$Comp
+L power:GND #PWR011
+U 1 1 5F6D792A
+P 4375 5150
+F 0 "#PWR011" H 4375 4900 50  0001 C CNN
+F 1 "GND" H 4380 4977 50  0000 C CNN
+F 2 "" H 4375 5150 50  0001 C CNN
+F 3 "" H 4375 5150 50  0001 C CNN
+	1    4375 5150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4375 3850 4375 3800
+Wire Wire Line
+	4375 3800 4575 3800
+Connection ~ 4575 3800
+Wire Wire Line
+	4575 3800 4575 3850
+$Comp
+L Device:C_Small C13
+U 1 1 5F8293A4
+P 5250 3950
+F 0 "C13" H 5320 4020 50  0000 L CNN
+F 1 "0.1u" H 5290 3880 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 5250 3950 50  0001 C CNN
+F 3 "~" H 5250 3950 50  0001 C CNN
+	1    5250 3950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5025 3800 5025 4150
+Wire Wire Line
+	5025 4150 4975 4150
+Text Notes 4650 5050 0    50   ~ 0
+I2C addr\n0x14
+Wire Wire Line
+	5250 3800 5250 3850
+Wire Wire Line
+	4575 3800 5025 3800
+Connection ~ 5025 3800
+Wire Wire Line
+	5025 3800 5250 3800
+Wire Wire Line
+	5250 5050 5250 4050
+Wire Wire Line
+	4575 5050 5250 5050
+Connection ~ 4575 5050
+Wire Wire Line
+	4575 5050 4375 5050
+Connection ~ 4375 5050
+Wire Wire Line
+	4375 5050 4375 5150
+Wire Wire Line
+	4375 4900 4375 5050
+Wire Wire Line
+	4575 4900 4575 5050
 $Comp
 L open-Smartwatch:BMA400 U2
 U 1 1 5F6C61F2
-P 2825 1450
-F 0 "U2" H 2425 1950 50  0000 L CNN
-F 1 "BMA400" H 2975 1000 50  0000 L CNN
-F 2 "open-Smartwatch:LGA-12_2x2mm_P0.5mm" H 3825 1000 50  0001 C CIN
-F 3 "https://ae-bst.resource.bosch.com/media/_tech/media/datasheets/BST-BMA400-DS000.pdf" H 2825 1450 50  0001 C CNN
-F 4 "828-1081-1-ND" H 3335 905 50  0001 C CNN "DigiKey_PN"
-F 5 "Bosch Sensortec" H 3315 830 50  0001 C CNN "Manufacturer"
-F 6 "BMA400" H 3150 745 50  0001 C CNN "MPN"
-	1    2825 1450
+P 4475 4400
+F 0 "U2" H 4075 4900 50  0000 L CNN
+F 1 "BMA400" H 4625 3950 50  0000 L CNN
+F 2 "open-Smartwatch:LGA-12_2x2mm_P0.5mm" H 5475 3950 50  0001 C CIN
+F 3 "https://ae-bst.resource.bosch.com/media/_tech/media/datasheets/BST-BMA400-DS000.pdf" H 4475 4400 50  0001 C CNN
+F 4 "828-1081-1-ND" H 4985 3855 50  0001 C CNN "DigiKey_PN"
+F 5 "Bosch Sensortec" H 4965 3780 50  0001 C CNN "Manufacturer"
+F 6 "BMA400" H 4800 3695 50  0001 C CNN "MPN"
+	1    4475 4400
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2725 2100 2250 2100
+	4375 5050 3900 5050
 Wire Wire Line
-	2250 2100 2250 1600
+	3900 5050 3900 4550
 Wire Wire Line
-	2250 1600 2325 1600
+	3900 4550 3975 4550
+$Comp
+L Timer_RTC:DS3231MZ U1
+U 1 1 5F6A53FE
+P 4400 2550
+F 0 "U1" H 4050 2900 50  0000 C CNN
+F 1 "DS3231MZ" H 4650 2200 50  0000 C CNN
+F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 4400 2050 50  0001 C CNN
+F 3 "http://datasheets.maximintegrated.com/en/ds/DS3231M.pdf" H 4400 1950 50  0001 C CNN
+	1    4400 2550
+	1    0    0    -1  
+$EndComp
+Text Label 3750 2350 0    50   ~ 0
+SCL
 Wire Wire Line
-	3400 4000 3750 4000
-NoConn ~ 3750 3400
+	3750 2350 3900 2350
+Text Label 3750 2450 0    50   ~ 0
+SDA
 Wire Wire Line
-	3500 3350 3250 3350
+	3750 2450 3900 2450
+$Comp
+L power:+3V3 #PWR03
+U 1 1 5F6ADFAF
+P 4400 1900
+F 0 "#PWR03" H 4400 1750 50  0001 C CNN
+F 1 "+3V3" H 4415 2073 50  0000 C CNN
+F 2 "" H 4400 1900 50  0001 C CNN
+F 3 "" H 4400 1900 50  0001 C CNN
+	1    4400 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR09
+U 1 1 5F6BC9F6
+P 4400 3300
+F 0 "#PWR09" H 4400 3050 50  0001 C CNN
+F 1 "GND" H 4405 3127 50  0000 C CNN
+F 2 "" H 4400 3300 50  0001 C CNN
+F 3 "" H 4400 3300 50  0001 C CNN
+	1    4400 3300
+	1    0    0    -1  
+$EndComp
 Wire Wire Line
-	3750 3100 3500 3100
+	4400 3300 4400 3200
+NoConn ~ 3900 2750
+NoConn ~ 4900 2350
+Text Label 5000 3000 1    50   ~ 0
+RTC_INT
 Wire Wire Line
-	3500 3100 3500 3350
-Text Label 3400 4000 0    50   ~ 0
+	4900 2650 5000 2650
+$Comp
+L Device:C_Small C11
+U 1 1 5F8276CE
+P 5150 2100
+F 0 "C11" H 5220 2170 50  0000 L CNN
+F 1 "0.1u" H 5190 2030 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 5150 2100 50  0001 C CNN
+F 3 "~" H 5150 2100 50  0001 C CNN
+	1    5150 2100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5000 2500 5000 2650
+Connection ~ 5000 2650
+Wire Wire Line
+	5000 2650 5000 3000
+$Comp
+L Device:R_Small R18
+U 1 1 5FCDFF42
+P 5000 2400
+F 0 "R18" H 4850 2450 50  0000 L CNN
+F 1 "2.2K" H 4775 2375 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 5000 2400 50  0001 C CNN
+F 3 "~" H 5000 2400 50  0001 C CNN
+	1    5000 2400
+	-1   0    0    1   
+$EndComp
+Text Notes 4550 3175 0    50   ~ 0
+I2C addr\n0x68
+Wire Wire Line
+	4400 1900 4400 1950
+Wire Wire Line
+	5150 1950 5150 2000
+Wire Wire Line
+	4400 1950 5000 1950
+Connection ~ 4400 1950
+Wire Wire Line
+	4400 1950 4400 2150
+Wire Wire Line
+	4400 1950 4300 1950
+Wire Wire Line
+	4300 1950 4300 2150
+Wire Wire Line
+	5000 1950 5000 2300
+Connection ~ 5000 1950
+Wire Wire Line
+	5000 1950 5150 1950
+Wire Wire Line
+	5150 2200 5150 3200
+Wire Wire Line
+	5150 3200 4400 3200
+Connection ~ 4400 3200
+Wire Wire Line
+	4400 3200 4400 2950
+Wire Notes Line
+	5600 500  5600 5500
+Wire Wire Line
+	3025 2900 2625 2900
+Wire Wire Line
+	2625 3100 3025 3100
+Text Label 3025 3100 2    50   ~ 0
+BTN3
+Text Label 3025 2900 2    50   ~ 0
+BTN2
+Wire Wire Line
+	2625 3000 3025 3000
+Text Label 3025 4300 2    50   ~ 0
+TFT_RST
+Wire Wire Line
+	2625 4300 3025 4300
+Text Label 3025 3000 2    50   ~ 0
+TFT_DC
+Text Label 3025 2800 2    50   ~ 0
+PIN_LED
+Wire Wire Line
+	2625 3300 3025 3300
+Text Label 3025 3300 2    50   ~ 0
+STAT_PWR
+Text Label 3025 3800 2    50   ~ 0
+MOSI
+Wire Wire Line
+	2625 3800 3025 3800
+Text Label 3025 4400 2    50   ~ 0
+IO34
+Wire Wire Line
+	2625 4400 3025 4400
+Text Label 3025 2500 2    50   ~ 0
+RX
+Text Label 3025 2300 2    50   ~ 0
+TX
+Text Label 3025 2700 2    50   ~ 0
+TFT_CS
+Text Label 3025 3400 2    50   ~ 0
+SCK
+Wire Wire Line
+	2625 2700 3025 2700
+Wire Wire Line
+	2625 3400 3025 3400
+Wire Wire Line
+	2625 2500 3025 2500
+Wire Wire Line
+	2625 2300 3025 2300
+Text Label 3025 3600 2    50   ~ 0
+SDA
+Wire Wire Line
+	2625 3600 3025 3600
+Text Label 3025 3700 2    50   ~ 0
+SCL
+Wire Wire Line
+	2625 3700 3025 3700
+Text Label 875  2000 0    50   ~ 0
+EN
+Text Label 3025 2200 2    50   ~ 0
+FLASH
+Wire Wire Line
+	2625 2200 3025 2200
+Wire Wire Line
+	3025 2800 2625 2800
+Wire Wire Line
+	3025 3900 2625 3900
+Text Label 3025 3900 2    50   ~ 0
 B_MON
+$Comp
+L RF_Module:ESP32-PICO-D4 U3
+U 1 1 6074EBCA
+P 1825 3400
+F 0 "U3" H 1175 4950 50  0000 C CNN
+F 1 "ESP32-PICO-D4" H 2200 1825 50  0000 C CNN
+F 2 "Package_DFN_QFN:QFN-48-1EP_7x7mm_P0.5mm_EP5.3x5.3mm" H 1825 1700 50  0001 C CNN
+F 3 "https://www.espressif.com/sites/default/files/documentation/esp32-pico-d4_datasheet_en.pdf" H 2075 2400 50  0001 C CNN
+	1    1825 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR06
+U 1 1 607CFD8E
+P 1825 5250
+F 0 "#PWR06" H 1825 5000 50  0001 C CNN
+F 1 "GND" H 1830 5077 50  0000 C CNN
+F 2 "" H 1825 5250 50  0001 C CNN
+F 3 "" H 1825 5250 50  0001 C CNN
+	1    1825 5250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1825 5000 1825 5250
+Text Label 3025 4200 2    50   ~ 0
+RTC_INT
+Wire Wire Line
+	2625 4200 3025 4200
+Wire Wire Line
+	2625 4500 3025 4500
+Text Label 3025 4500 2    50   ~ 0
+IO35
+NoConn ~ 2625 4000
+NoConn ~ 2625 4100
+NoConn ~ 2625 3200
+NoConn ~ 1025 3700
+NoConn ~ 1025 3800
+NoConn ~ 2625 2400
+NoConn ~ 2625 2600
+NoConn ~ 1025 3600
+NoConn ~ 2625 3500
+NoConn ~ 1025 3400
+NoConn ~ 1025 3500
+NoConn ~ 1025 3900
+NoConn ~ 2625 4700
+NoConn ~ 1025 2200
+NoConn ~ 1025 2300
+NoConn ~ 1025 2400
+NoConn ~ 1025 2500
+Wire Wire Line
+	675  2000 1025 2000
+$Comp
+L Device:C_Small C7
+U 1 1 60EBEF1A
+P 675 2175
+F 0 "C7" H 745 2245 50  0000 L CNN
+F 1 "0.1u" H 715 2105 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 675 2175 50  0001 C CNN
+F 3 "~" H 675 2175 50  0001 C CNN
+	1    675  2175
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR01
+U 1 1 60ED75F9
+P 675 2350
+F 0 "#PWR01" H 675 2100 50  0001 C CNN
+F 1 "GND" H 680 2177 50  0000 C CNN
+F 2 "" H 675 2350 50  0001 C CNN
+F 3 "" H 675 2350 50  0001 C CNN
+	1    675  2350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	675  2275 675  2350
+Wire Wire Line
+	675  2075 675  2000
+Wire Wire Line
+	1625 1800 1625 1400
+Wire Wire Line
+	1625 1400 1725 1400
+Connection ~ 1725 1400
+Wire Wire Line
+	1725 1800 1725 1400
+Wire Wire Line
+	1725 1400 1825 1400
+Wire Wire Line
+	1825 1400 1925 1400
+Connection ~ 1825 1400
+Wire Wire Line
+	1825 1800 1825 1400
+Wire Wire Line
+	1925 1800 1925 1400
+Connection ~ 1625 1400
+Wire Wire Line
+	675  1400 675  1300
+Wire Wire Line
+	950  1400 1225 1400
+Connection ~ 950  1400
+Wire Wire Line
+	950  1450 950  1400
+Wire Wire Line
+	675  1400 950  1400
+Connection ~ 675  1400
+Wire Wire Line
+	675  1450 675  1400
+Wire Wire Line
+	950  1700 675  1700
+Connection ~ 950  1700
+Wire Wire Line
+	950  1650 950  1700
+Connection ~ 675  1700
+Wire Wire Line
+	675  1650 675  1700
+Wire Wire Line
+	675  1700 675  1725
+Wire Wire Line
+	1225 1700 950  1700
+$Comp
+L Device:C_Small C10
+U 1 1 60D2E258
+P 675 1550
+F 0 "C10" H 750 1625 50  0000 L CNN
+F 1 "4.7u" H 700 1475 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 675 1550 50  0001 C CNN
+F 3 "~" H 675 1550 50  0001 C CNN
+	1    675  1550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C12
+U 1 1 60CFDF18
+P 950 1550
+F 0 "C12" H 1025 1625 50  0000 L CNN
+F 1 "4.7u" H 975 1475 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 950 1550 50  0001 C CNN
+F 3 "~" H 950 1550 50  0001 C CNN
+	1    950  1550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1225 1700 1225 1650
+Wire Wire Line
+	1225 1400 1625 1400
+Connection ~ 1225 1400
+Wire Wire Line
+	1225 1450 1225 1400
+$Comp
+L power:GND #PWR02
+U 1 1 60CACC4C
+P 675 1725
+F 0 "#PWR02" H 675 1475 50  0001 C CNN
+F 1 "GND" H 680 1552 50  0000 C CNN
+F 2 "" H 675 1725 50  0001 C CNN
+F 3 "" H 675 1725 50  0001 C CNN
+	1    675  1725
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C8
+U 1 1 5F82A290
+P 1225 1550
+F 0 "C8" H 1295 1620 50  0000 L CNN
+F 1 "0.1u" H 1265 1480 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 1225 1550 50  0001 C CNN
+F 3 "~" H 1225 1550 50  0001 C CNN
+	1    1225 1550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR017
+U 1 1 5FCF97D6
+P 675 1300
+F 0 "#PWR017" H 675 1150 50  0001 C CNN
+F 1 "+3V3" H 690 1473 50  0000 C CNN
+F 2 "" H 675 1300 50  0001 C CNN
+F 3 "" H 675 1300 50  0001 C CNN
+	1    675  1300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Antenna_Chip AE1
+U 1 1 6172A1E0
+P 2900 1400
+F 0 "AE1" H 3080 1527 50  0000 L CNN
+F 1 "Antenna_Chip" H 3080 1436 50  0000 L CNN
+F 2 "open-Smartwatch:Johanson_2450AT42A100" H 2800 1575 50  0001 C CNN
+F 3 "https://www.johansontechnology.com/datasheets/2450AT42A100/2450AT42A100.pdf" H 2800 1575 50  0001 C CNN
+	1    2900 1400
+	1    0    0    -1  
+$EndComp
+NoConn ~ 3000 1500
+Wire Wire Line
+	2800 1500 2800 2000
+Wire Wire Line
+	2800 2000 2625 2000
+Text Notes 2800 1800 0    50   ~ 0
+50ohm
 $EndSCHEMATC
